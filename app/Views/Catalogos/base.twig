@@ -1,0 +1,40 @@
+{% extends 'template/temp.twig' %}
+
+{% block title 'Listado de Datos' %}
+
+{% block body %}
+    <div class="row">
+      <form method="post" id="formulario">
+      <div class="form-group">
+          <div class="col-sm-3">
+            <label>Fecha Inical</label>
+            <input type="date" class="form-control" name="FechaInicial" id="FechaInicial">
+          </div>
+          <div class="col-sm-3">
+            <label>Fecha Final</label>
+            <input type="date" class="form-control" name="FechaFinal" id="FechaFinal" >
+          </div>
+
+          <div class="col-sm-3">
+            <label>.</label>
+            <span class="input-group-btn">
+                <button class="btn btn-primary filter" id="btn-ingresar" type="button" data-model="{{ modelo }}">
+                  <i class="fa fa-filter"></i> Filtrar
+                </button>
+            </span>
+
+          </div>
+
+      </div>
+      </form>
+        <div class="clearfix"></div>
+
+        <div class="table-responsive" style="margin-top: 25px">
+            {% block tabla %}
+
+            {% endblock %}
+        </div>
+
+
+    </div>
+{% endblock %}

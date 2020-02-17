@@ -1,0 +1,32 @@
+{% extends 'Catalogos/catalogo.twig' %}
+
+{% block title 'Asignar Modulos' %}
+
+{% block tabla %}
+    <table id="table" class="table table-bordered table-condensed table-hover">
+        <thead>
+        <tr>
+            <th>Usuario</th>
+            <th>Modulo</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody id="table-content">
+        <!-- Contenido de la tabla -->
+        {% for d in modulos %}
+            <tr>
+                <td>{{ d.NombreUser }}</td>
+                <td>{{ d.NombreMod | convert_encoding('UTF-8', 'ISO-8859-1') }}</td>
+                <td class="text-right">
+                    <button type="button" class="btn btn-xs btn-primary" data-toggle="modal" data-target="#operationModal" data-id="{{ d.IdModuloxUsuario }}" data-model="{{ modelo }}" data-operation="Editar">
+                        <i class="fa fa-edit"></i> Editar
+                    </button>
+                    <button type="button" class="btn btn-xs btn-danger" data-toggle="modal" data-target="#operationModal" data-id="{{ d.IdModuloxUsuario }}" data-model="{{ modelo }}" data-operation="Eliminar">
+                        <i class="fa fa-trash"></i> Eliminar
+                    </button>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

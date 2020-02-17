@@ -1,0 +1,23 @@
+{% extends 'Catalogos/base.twig' %}
+
+{% block title 'Entradas' %}
+
+{% block tabla %}
+    <table class="table table-bordered table-condensed table-hover">
+        <thead class="thead-dark">
+        <tr>
+            <th>Hotel</th>
+            <th>Importe</th>
+        </tr>
+        </thead>
+        <tbody id="table-content">
+        <!-- Contenido de la tabla -->
+        {% for d in resumen %}
+            <tr>
+                <td>{{ d.Hotel }}</td>
+                <td>{{ d.Importe }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

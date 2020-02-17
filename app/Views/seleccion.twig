@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="{{ resource('bootstrap/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ resource('bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ resource('font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ resource('css/select.css') }}">
+    <link rel="stylesheet" href="{{ resource('css/login.css') }}">
+    <link rel="icon" type="image/png" href="{{ resource('img/logo.png') }}">
+
+    <title>Selecionar | EMS Hoteles</title>
+</head>
+<body class="text-center">
+  <div class="login">
+    <div class="well">
+      <h2>SELECCIÓN DE HOTEL</h2>
+    </div>
+    {% for d in name %}
+    <form action="{{('seleccion/select')}}" method="POST" class="form-signin">
+      <br>
+      <input type="hidden" name="IdHotel" value="{{ d.IdHotel }}">
+      <button class="btn btn-lg btn-primary btn-block col-md-offset-1 col-md-10 mt-md-2" type="submit">{{ d.Nombre }}</button>
+   </form>
+   <br>
+   {% endfor %}
+
+  </div>
+
+</body>
+</html>
