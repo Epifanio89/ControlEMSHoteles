@@ -1,28 +1,32 @@
 {% extends 'Catalogos/catalogo.twig' %}
 
-{% block title 'Conceptos' %}
+{% block title 'Habitaciones' %}
 
 {% block tabla %}
     <table id="table" class="table table-bordered table-condensed table-hover">
         <thead class="thead-dark">
         <tr>
-            <th>Codigo</th>
-            <th>Nombre</th>
+            <th>Hotel</th>
+            <th>Habitacion</th>
+            <th>Num. Habitaciones</th>
+            <th>Descripcion</th>
             <th></th>
         </tr>
         </thead>
         <tbody id="table-content">
         <!-- Contenido de la tabla -->
-        {% for d in conceptos %}
+        {% for d in habitacion %}
             <tr>
-                <td>{{ d.Codigo }}</td>
+                <td>{{ d.Hotel }}</td>
                 <td>{{ d.Nombre }}</td>
+                <td>{{ d.Habitaciones }}</td>
+                <td>{{ d.Descripcion }}</td>
                 <td class="text-right">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                  <button type="button" class="btn btn-sm btn-primary" id="option1" data-toggle="modal" data-target="#operationModal" data-id="{{ d.IdConcepto }}" data-model="{{ modelo }}" data-operation="Editar">
+                  <button type="button" class="btn btn-sm btn-primary" id="option1" data-toggle="modal" data-target="#operationModal" data-id="{{ d.IdHabitacion }}" data-model="{{ modelo }}" data-operation="Editar">
                       <i class="fa fa-edit"></i>
                   </button>
-                  <button type="button" class="btn btn-sm btn-danger" id="option2" data-toggle="modal" data-target="#operationModal" data-id="{{ d.IdConcepto }}" data-model="{{ modelo }}" data-operation="Eliminar">
+                  <button type="button" class="btn btn-sm btn-danger" id="option2" data-toggle="modal" data-target="#operationModal" data-id="{{ d.IdHabitacion }}" data-model="{{ modelo }}" data-operation="Eliminar">
                       <i class="fa fa-trash"></i>
                   </button>
                 </div>

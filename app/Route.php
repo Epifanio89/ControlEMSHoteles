@@ -55,6 +55,10 @@ class Route{
            ['url' => 'cpanel/modulos/save',       'ctrl' => 'ModulosController@save',               'type' => 'admin'],
            ['url' => 'cpanel/modulos/del',            'ctrl' => 'ModulosController@del',              'type' => 'admin'],
 
+           ['url' => 'cpanel/habitacion',              'ctrl' => 'HabitacionController@index',              'type' => 'admin'],
+           ['url' => 'cpanel/habitacion/save',       'ctrl' => 'HabitacionController@save',               'type' => 'admin'],
+           ['url' => 'cpanel/habitacion/del',            'ctrl' => 'HabitacionController@del',              'type' => 'admin'],
+
 
            ['url' => 'cpanel/seleccion', 				'ctrl' => 'SeleccionController@index', 						    'type' => 'admin'],
            ['url' => 'cpanel/seleccion/select', 				'ctrl' => 'SeleccionController@select', 						    'type' => 'admin'],

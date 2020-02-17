@@ -46,7 +46,7 @@ $(document).ready(function() {
 			{
 				extend:    'csvHtml5',
 				text:      '<i class="fa fa-print"></i> ',
-				titleAttr: 'CVS',
+				titleAttr: 'CSV',
 				className: 'btn btn-secondary'
 			},
 		]
