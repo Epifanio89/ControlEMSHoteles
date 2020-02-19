@@ -20,9 +20,16 @@ class ReservacionController{
 
           $reg->Folio = $_POST['Folio'];
           $reg->Fecha = $_POST['Fecha'];
+          $reg->IdHabitacion = $_POST['IdHabitacion'];
+          $reg->Nombre = $_POST['Nombre'];
+          $reg->NPersonas = $_POST['NPersonas'];
+          $reg->Efectivo = $_POST['Efectivo'];
+          $reg->TPVArcos = $_POST['TPVArcos'];
+          $reg->TPVReal = $_POST['TPVReal'];
+          $reg->Depositos = $_POST['Depositos'];
+          $reg->Commerce = $_POST['Commerce'];
+          $reg->Guia = $_POST['Guia'];
           $reg->Descripcion = $_POST['Descripcion'];
-          $reg->NumHabitacion = $_POST['NumHabitacion'];
-          $reg->Importe = $_POST['Importe'];
           //$reg->IdUsuario = 1;
           //$reg->IdHotel = 1;
           $reg->IdReservacion = $_POST['id'];

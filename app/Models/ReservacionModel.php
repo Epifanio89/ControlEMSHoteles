@@ -7,9 +7,16 @@ Class ReservacionModel extends Model{
 	public $IdReservacion;
 	public $Folio;
 	public $Fecha;
-	public $NumHabitacion;
+	public $IdHabitacion;
+	public $Nombre;
+	public $NPersonas;
+	public $Efectivo;
+	public $TPVArcos;
+	public $TPVReal;
+	public $Commerce;
+	public $Depositos;
+	public $Guia;
 	public $Descripcion;
-	public $Importe;
 	public $IdUsuario;
 	public $IdHotel;
 
@@ -17,9 +24,16 @@ Class ReservacionModel extends Model{
 		self::$tablename = 'reservacion';
 		$this->Folio='';
 		$this->Fecha;
-		$this->NumHabitacion='0';
+		$this->IdHabitacion='0';
+		$this->Nombre='';
+		$this->NPersonas='0';
+		$this->Efectivo='0.00';
+		$this->TPVArcos='0.00';
+		$this->TPVReal='0.00';
+		$this->Commerce='0.00';
+		$this->Depositos='0.00';
+		$this->Guia ='';
 		$this->Descripcion='';
-		$this->Importe='0.00';
 		$this->IdUsuario;
 		$this->IdHotel;
 		$this->IdReservacion = '0';
@@ -27,16 +41,43 @@ Class ReservacionModel extends Model{
 
 	public function add(){
 		$query = "INSERT INTO ".self::$tablename." (
-		IdReservacion, Folio, Fecha, NumHabitacion, Descripcion, Importe,IdUsuario,IdHotel
+		IdReservacion, Folio, Fecha, IdHabitacion, Nombre, NPersonas, Efectivo, TPVArcos, TPVReal, Commerce, Depositos, Guia, Descripcion, IdUsuario,IdHotel
 		) VALUES 
-		('0','{$this->Folio}','{$this->Fecha}','{$this->NumHabitacion}','{$this->Descripcion}','{$this->Importe}','".$_SESSION['IdUser']."','".$_SESSION['IdHotel']."')";
+		('0',
+			'{$this->Folio}',
+			'{$this->Fecha}',
+			'{$this->IdHabitacion}',
+			'{$this->Nombre}',
+			'{$this->NPersonas}',
+			'{$this->Efectivo}',
+			'{$this->TPVArcos}',
+			'{$this->TPVReal}',
+			'{$this->Commerce}',
+			'{$this->Depositos}',
+			'{$this->Guia}',
+			'{$this->Descripcion}',
+			'".$_SESSION['IdUser']."',
+			'".$_SESSION['IdHotel']."')";
 		$sql = Executor::doit($query);
 		return $sql[1];
 	}
 
 	public function update(){
-		$sql = "UPDATE ".self::$tablename." SET Folio='{$this->Folio}', Fecha='{$this->Fecha}', NumHabitacion='{$this->NumHabitacion}', Descripcion='{$this->Descripcion}', Importe='{$this->Importe}' WHERE 	
-			IdReservacion='{$this->IdReservacion}'";
+		$sql = "UPDATE ".self::$tablename." SET 
+					Folio='{$this->Folio}', 
+					Fecha='{$this->Fecha}', 
+					IdHabitacion='{$this->IdHabitacion}', 
+					Nombre='{$this->Nombre}',
+					NPersonas='{$this->NPersonas}',
+					Efectivo='{$this->Efectivo}',
+					TPVArcos='{$this->TPVArcos}',
+					TPVReal='{$this->TPVReal}',
+					Commerce='{$this->Commerce}',
+					Depositos='{$this->Depositos}',
+					Guia='{$this->Guia}',
+					Descripcion='{$this->Descripcion}' 
+					WHERE 	
+				IdReservacion='{$this->IdReservacion}'";
 			Executor::doit($sql);
 	}
 
