@@ -12,33 +12,69 @@ class ReservacionRequest{
 		<form action="<?= route('cpanel/' . $_POST['model'] . '/save'); ?>" method="POST" class="form-horizontal">
             <input type="hidden" name="id" value="<?= $reserva->IdReservacion; ?>">
             <div class="form-group">
-                <div class="col-sm-4">
+                <div class="col-sm-3">
 	                <label for="codigo" class="col-sm-1 control-label">Folio</label>
 	                <input type="text" name="Folio" id="Codigo" value="<?= $reserva->Folio; ?>"
                            class="form-control" required autocomplete="off">
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-3">
 	                <label for="Fecha" class="col-sm-1 control-label">Fecha</label>
 	                <input type="date" name="Fecha" id="Fecha" value="<?= $reserva->Fecha; ?>"
                            class="form-control" required autocomplete="off">
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                 <label for="NumHabitacion" class="col-sm-1 control-label">Habitación</label>
                     <input type="number" name="NumHabitacion" id="NumHabitacion" value="<?= $reserva->NumHabitacion; ?>"
                            class="form-control" required autocomplete="off">
                 </div>
+                <div class="col-sm-8">
+                <label for="Nombre" class="col-sm-1 control-label">Nombre</label>
+                    <input type="text" name="Nombre" id="Nombre" value="<?= $reserva->NumHabitacion; ?>"
+                           class="form-control" required autocomplete="off">
+                </div>
                 <div class="col-sm-4">
-                <label for="Importe" class="col-sm-1 control-label">Importe</label>
-                  <input type="text" name="Importe" id="Importe" value="<?= $reserva->Importe; ?>" class="form-control"
+                <label for="NumPersonas" class="col-sm-1 control-label">Num. Personas</label>
+                    <input type="number" name="NumPersonas" id="NumPersonas" value="<?= $reserva->NumHabitacion; ?>"
+                           class="form-control" required autocomplete="off">
+                </div>
+
+                <div class="col-sm-3">
+                <label for="Efectivo" class="col-sm-1 control-label">Efectivo</label>
+                  <input type="text" name="Efectivo" id="Efectivo" value="<?= $reserva->Importe; ?>" class="form-control"
                          required autocomplete="off">
-              </div>
-              <div class="col-sm-8">
-                <label for="Descripcion" class="col-sm-1 control-label">Descipción</label>
-                
-                    <input type="text" name="Descripcion" id="Nombre" value="<?= $reserva->Descripcion; ?>" class="form-control"
+                </div>
+                <div class="col-sm-3">
+                <label for="TPVArcos" class="col-sm-1 control-label">TPV Arcos</label>
+                  <input type="text" name="TPVArcos" id="TPVArcos" value="<?= $reserva->Importe; ?>" class="form-control"
+                         required autocomplete="off">
+                </div>
+                <div class="col-sm-3">
+                <label for="TPVReal" class="col-sm-1 control-label">TPV Real</label>
+                  <input type="text" name="TPVReal" id="TPVReal" value="<?= $reserva->Importe; ?>" class="form-control"
+                         required autocomplete="off">
+                </div>
+                <div class="col-sm-3">
+                <label for="Deposito" class="col-sm-1 control-label">Depositos</label>
+                  <input type="text" name="Deposito" id="Deposito" value="<?= $reserva->Importe; ?>" class="form-control"
+                         required autocomplete="off">
+                </div>
+                <div class="col-sm-3">
+                <label for="Commerce" class="col-sm-1 control-label">E-Commerce</label>
+                  <input type="text" name="Commerce" id="Commerce" value="<?= $reserva->Importe; ?>" class="form-control"
+                         required autocomplete="off">
+                </div>
+                <div class="col-sm-9">
+                <label for="Guia" class="col-sm-1 control-label">Nombre Guia</label>
+                    <input type="text" name="Guia" id="Guia" value="<?= $reserva->Descripcion; ?>" class="form-control"
                            required autocomplete="off">
                 </div>
 
+                <div class="col-sm-12">
+                <label for="Descripcion" class="col-sm-1 control-label">Descripción</label>
+                
+                    <input type="text" name="Descripcion" id="Descripcion" value="<?= $reserva->Descripcion; ?>" class="form-control"
+                           required autocomplete="off">
+                </div>
 
             </div>
 
