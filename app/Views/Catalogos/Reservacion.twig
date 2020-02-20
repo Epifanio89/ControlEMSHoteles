@@ -21,7 +21,7 @@
                 <td>{{ d.Folio }}</td>
                 <td>{{ d.Fecha|date('d/m/Y') }}</td>
                 <td class="text-center">{{ d.IdHabitacion }}</td>
-                <td class="text-right">{{ d.Efectivo }}</td>
+                <td class="text-right">{{ (d.Efectivo+d.TPVArcos+d.TPVReal+d.Commerce+d.Depositos) }}</td>
                 <td>{{ d.Descripcion }}</td>
                 <td class="text-right">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">

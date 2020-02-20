@@ -41,4 +41,12 @@ class HabitacionModel extends Model {
 		return self::many($query[0]);
 	}
 
+	public function getHabitacionxUser($id){
+		$sql="select h.IdHabitacion,h.Nombre from habitaciones as h
+		inner join usuarioxhotel as u on (u.IdHotel = h.IdHotel) where u.IdUsuario = {$id}";
+		$query = Executor::doit($sql);
+
+		return self::many($query[0]);
+	}
+
 }

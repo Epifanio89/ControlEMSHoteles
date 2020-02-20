@@ -1,10 +1,16 @@
-<?php 
+<?php
 namespace App\Request;
 
 use App\Models\ReservacionModel;
-
+use App\Models\HabitacionModel;
 class ReservacionRequest{
 	function Agregar(){
+		session_start();
+		$idUser=$_SESSION['IdUser'];
+
+		$habitacion = new HabitacionModel();
+		$habitacion = $habitacion->getHabitacionxUser($idUser);
+
 		$reserva = new ReservacionModel();
 		if ($_POST['id'] != 0)
 			$reserva = $reserva->getById($_POST['id'],'IdReservacion'); ?>
@@ -24,8 +30,13 @@ class ReservacionRequest{
                 </div>
                 <div class="col-sm-6">
                 <label for="IdHabitacion" class=" control-label">Habitación</label>
-                    <input type="number" name="IdHabitacion" id="IdHabitacion" value="<?= $reserva->IdHabitacion; ?>"
-                           class="form-control" required autocomplete="off">
+								<select name="IdHabitacion" id="IdHabitacion" class="form-control">
+										<?php foreach ($habitacion as $c): ?>
+												<option value="<?=$c->IdHabitacion; ?>" <?=($c->IdHabitacion == $reserva->IdHabitacion) ? 'selected' : '' ?>>
+														<?= $c->Nombre; ?>
+												</option>
+										<?php endforeach; ?>
+								</select>
                 </div>
 
                 <div class="col-sm-8">
@@ -59,7 +70,7 @@ class ReservacionRequest{
                   <input type="text" name="Depositos" id="Depositos" value="<?= $reserva->Depositos; ?>" class="form-control"
                          required autocomplete="off">
                 </div>
-                
+
                 <div class="col-sm-3">
                 <label for="Commerce" class="control-label">E-Commerce</label>
                   <input type="text" name="Commerce" id="Commerce" value="<?= $reserva->Commerce; ?>" class="form-control"
@@ -73,7 +84,7 @@ class ReservacionRequest{
 
                 <div class="col-sm-12">
                 <label for="Descripcion" class="control-label">Descripción</label>
-                
+
                     <input type="text" name="Descripcion" id="Descripcion" value="<?= $reserva->Descripcion; ?>" class="form-control"
                            required autocomplete="off">
                 </div>
