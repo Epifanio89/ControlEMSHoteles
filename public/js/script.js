@@ -35,19 +35,19 @@ $(document).ready(function() {
 				extend:    'excelHtml5',
 				text:      '<i class="fa fa-file-excel-o"></i> ',
 				titleAttr: 'Exportar a Excel',
-				className: 'btn btn-secondary'
+				className: 'btn btn-success'
 			},
 			{
 				extend:    'pdfHtml5',
 				text:      '<i class="fa fa-file-pdf-o"></i> ',
 				titleAttr: 'Exportar a PDF',
-				className: 'btn btn-secondary'
+				className: 'btn btn-danger'
 			},
 			{
 				extend:    'csvHtml5',
 				text:      '<i class="fa fa-print"></i> ',
 				titleAttr: 'CSV',
-				className: 'btn btn-secondary'
+				className: 'btn btn-primary'
 			},
 		]
     });
